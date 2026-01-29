@@ -112,7 +112,7 @@ const Footer = () => {
             >
               <Heart className="w-4 h-4 text-secondary fill-secondary" />
             </motion.span>
-            and Python
+            By Vishal
           </p>
         </motion.div>
       </div>

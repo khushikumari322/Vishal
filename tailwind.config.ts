@@ -1,5 +1,28 @@
 import type { Config } from "tailwindcss";
 
+const customColorUtilities = {
+  '.bg-background': { backgroundColor: 'hsl(var(--background))' },
+  '.bg-card': { backgroundColor: 'hsl(var(--card))' },
+  '.bg-popover': { backgroundColor: 'hsl(var(--popover))' },
+  '.bg-primary': { backgroundColor: 'hsl(var(--primary))' },
+  '.bg-secondary': { backgroundColor: 'hsl(var(--secondary))' },
+  '.bg-accent': { backgroundColor: 'hsl(var(--accent))' },
+  '.bg-muted': { backgroundColor: 'hsl(var(--muted))' },
+  '.bg-destructive': { backgroundColor: 'hsl(var(--destructive))' },
+  '.text-foreground': { color: 'hsl(var(--foreground))' },
+  '.text-card-foreground': { color: 'hsl(var(--card-foreground))' },
+  '.text-popover-foreground': { color: 'hsl(var(--popover-foreground))' },
+  '.text-primary-foreground': { color: 'hsl(var(--primary-foreground))' },
+  '.text-secondary-foreground': { color: 'hsl(var(--secondary-foreground))' },
+  '.text-accent-foreground': { color: 'hsl(var(--accent-foreground))' },
+  '.text-muted-foreground': { color: 'hsl(var(--muted-foreground))' },
+  '.text-destructive-foreground': { color: 'hsl(var(--destructive-foreground))' },
+  '.border-border': { borderColor: 'hsl(var(--border))' },
+  '.border-input': { borderColor: 'hsl(var(--input))' },
+  '.ring-ring': { '--tw-ring-color': 'hsl(var(--ring))' },
+  '.ring-offset-background': { '--tw-ring-offset-color': 'hsl(var(--background))' },
+};
+
 export default {
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
@@ -78,46 +101,8 @@ export default {
           "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
           "50%": { transform: "translateY(20px) rotate(-2deg)" },
         },
-        glow: {
-          "0%, 100%": { opacity: "0.5" },
-          "50%": { opacity: "1" },
-        },
-        "spin-slow": {
-          from: { transform: "rotate(0deg)" },
-          to: { transform: "rotate(360deg)" },
-        },
-        shimmer: {
-          "0%": { backgroundPosition: "-200% 0" },
-          "100%": { backgroundPosition: "200% 0" },
-        },
-        pulse: {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.5" },
-        },
-        "slide-up": {
-          from: { transform: "translateY(100%)", opacity: "0" },
-          to: { transform: "translateY(0)", opacity: "1" },
-        },
-        "slide-down": {
-          from: { transform: "translateY(-100%)", opacity: "0" },
-          to: { transform: "translateY(0)", opacity: "1" },
-        },
-        "fade-in": {
-          from: { opacity: "0" },
-          to: { opacity: "1" },
-        },
-        "scale-up": {
-          from: { transform: "scale(0.95)", opacity: "0" },
-          to: { transform: "scale(1)", opacity: "1" },
-        },
-        orbit: {
-          from: { transform: "rotate(0deg) translateX(100px) rotate(0deg)" },
-          to: { transform: "rotate(360deg) translateX(100px) rotate(-360deg)" },
-        },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
         float: "float 6s ease-in-out infinite",
         "float-reverse": "float-reverse 6s ease-in-out infinite",
         "float-slow": "float 8s ease-in-out infinite",
@@ -150,5 +135,10 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    function ({ addUtilities }) {
+      addUtilities(customColorUtilities, ['responsive', 'hover', 'focus', 'active', 'group-hover']);
+    },
+  ],
 } satisfies Config;

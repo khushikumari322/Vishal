@@ -37,7 +37,7 @@ export const generateResumeDoc = async () => {
         <h1>VISHAL KUMAWAT</h1>
         <div class="subtitle">BCA Student | Python & Automation Developer</div>
         <div class="contact">
-            <a href="mailto:xarvis320@gmail.com" style="color: #0066cc; text-decoration: none;">xarvis320@gmail.com</a> | +91 73003 02903 | Jaipur, Rajasthan<br>
+            <a href="mailto:xarvis320@gmail.com" style="color: #0066cc; text-decoration: none;">xarvis320@gmail.com</a> | +91 8529572050 | Jaipur, Rajasthan<br>
             <a href="https://github.com/vishalkumawatx" target="_blank" style="color: #0066cc; text-decoration: none;">github.com/vishalkumawatx</a> | <a href="https://linkedin.com/in/vishalkumawatx" target="_blank" style="color: #0066cc; text-decoration: none;">linkedin.com/in/vishalkumawatx</a> | <a href="https://www.vishalkumawat.dev" target="_blank" style="color: #0066cc; text-decoration: none;">vishalkumawat.dev</a>
         </div>
 

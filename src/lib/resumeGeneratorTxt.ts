@@ -8,7 +8,7 @@ export const generateResumeTxt = () => {
 ================================================================================
 
 Email: xarvis320@gmail.com
-Phone: +91 73003 02903
+Phone: +91 8529572050
 Location: Jaipur, Rajasthan
 GitHub: https://github.com/vishalkumawatx
 LinkedIn: https://linkedin.com/in/vishalkumawatx

@@ -15,40 +15,52 @@ const Resume = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
-      <div className="mx-auto flex w-full max-w-4xl flex-col gap-6 px-6 py-10">
-        <div className="flex flex-col gap-2">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">Resume</p>
-          <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Download Vishal&apos;s Resume</h1>
-          <p className="max-w-2xl text-base text-slate-600">
-            Choose your preferred format. The document version is Word-compatible and keeps layout intact; the text version is
-            ATS-friendly and easy to paste into applications.
-          </p>
+    <div className="min-h-screen bg-white text-black">
+      <div className="mx-auto flex w-full max-w-3xl flex-col gap-8 px-6 py-12">
+        <div className="flex flex-col gap-2 items-center text-center">
+            <h1 className="text-4xl font-extrabold tracking-tight text-black sm:text-5xl">Resume Download Options</h1>
+            <p className="max-w-2xl text-base text-black mt-2">
+              Select your preferred format for instant, offline-ready access.
+            </p>
         </div>
 
-        <Card>
+        {/* Preview Card */}
+          {/* Removed preview card for minimal professional look */}
+
+        {/* Download Options */}
+        <Card className="bg-white border border-black/10 shadow-none">
           <CardHeader className="space-y-2">
-            <CardTitle className="text-xl">Available Formats</CardTitle>
-            <CardDescription>Instant, offline-ready downloads generated on the fly.</CardDescription>
+            <CardTitle className="text-xl text-black font-bold tracking-wide flex items-center gap-2">
+              <Download className="h-5 w-5 text-black" /> Resume Download Options
+            </CardTitle>
+            <CardDescription className="text-black">Select your preferred format for instant, offline-ready access.</CardDescription>
           </CardHeader>
-          <CardContent className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <CardContent className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex flex-col gap-1">
-              <p className="font-medium text-slate-900">DOCX (recommended)</p>
-              <p className="text-sm text-slate-600">Word-compatible file with structured layout and styling.</p>
+              <p className="font-semibold text-black flex items-center gap-2"><Download className="h-4 w-4 text-black" /> DOCX <span className="text-xs text-black/70">(Recommended)</span></p>
+              <p className="text-sm text-black">Professional Word document with structured layout and modern styling.</p>
+              <a
+                href="/resume.docx"
+                download
+                className="text-xs text-black underline hover:text-black/80 mt-1"
+                style={{ display: 'inline-block' }}
+              >
+                Static Download (if dynamic fails)
+              </a>
             </div>
-            <Button variant="default" className="gap-2" onClick={handleDownloadDoc}>
-              <Download className="h-4 w-4" aria-hidden="true" />
+            <Button variant="default" className="gap-2 px-6 py-3 text-base font-semibold border border-black bg-white text-black hover:bg-black hover:text-white transition-colors duration-200 shadow-none" onClick={handleDownloadDoc}>
+              <Download className="h-5 w-5" aria-hidden="true" />
               Download DOCX
             </Button>
           </CardContent>
-          <Separator />
-          <CardContent className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <Separator className="bg-black/10" />
+          <CardContent className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex flex-col gap-1">
-              <p className="font-medium text-slate-900">Plain Text</p>
-              <p className="text-sm text-slate-600">Lightweight, ATS-friendly version ready to paste.</p>
+              <p className="font-semibold text-black flex items-center gap-2"><Download className="h-4 w-4 text-black" /> Plain Text</p>
+              <p className="text-sm text-black">Minimal, ATS-friendly format for easy copy-paste into job portals.</p>
             </div>
-            <Button variant="secondary" className="gap-2" onClick={handleDownloadTxt}>
-              <Download className="h-4 w-4" aria-hidden="true" />
+            <Button variant="secondary" className="gap-2 px-6 py-3 text-base font-semibold border border-black bg-white text-black hover:bg-black hover:text-white transition-colors duration-200 shadow-none" onClick={handleDownloadTxt}>
+              <Download className="h-5 w-5" aria-hidden="true" />
               Download TXT
             </Button>
           </CardContent>
